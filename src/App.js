@@ -1,26 +1,25 @@
 import React, { Component} from "react"
 import './App.css';
+import MyComponent from './components/MyComponent';
 
-
-import LifeCycle  from './components/LifeCycle';
 
 class App extends Component{
-
+  
   state = {
-    display: true,
+    age: 27,
   }
-  cacherOuAfficher = () =>{
-    //equivalent a faire un if
-    this.setState({display: !this.state.display});
+
+  addOneYear =() =>{
+    this.setState((prevState) => ({
+      age: prevState.age + 1
+    }))
   }
+
   render() {
-    const showComponent = this.state.display ? (<LifeCycle name= "toto2"></LifeCycle>) : (<div></div>);
     return (
       <div className="App">
-        
-        { showComponent }
-
-        <button onClick={this.cacherOuAfficher}>Clique ici!!</button>
+        <MyComponent age={this.state.age}></MyComponent>
+        <button onClick={this.addOneYear}>Changer le props</button>
       </div>
     );
   }
