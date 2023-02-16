@@ -7,7 +7,10 @@ class SingleComponent extends Component {
         console.log('%c render() composant enfant Simple', 'color: green;');
         return(
             <div className="">
-                bonjour
+                <p>
+                    <span className="blue">Single Component : </span>
+                    {this.props.name}
+                </p>
             </div>
         )
     }
