@@ -12,9 +12,3 @@ code {
     monospace;
 }
 
-.borderBox{
-  border: 1px solid grey;
-  width: 500px;
-  margin: 10px auto;
-
-}
